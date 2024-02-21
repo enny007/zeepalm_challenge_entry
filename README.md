@@ -1,6 +1,7 @@
 # zeepalm_challenge_entry
 
-A new Flutter project.
+This is my entry for the Zeepalm february challenge. Please for the best performance and optimization, view on Flutter web.
+It is responsive but for the best experience please run on flutter web.
 
 ## Getting Started
 
