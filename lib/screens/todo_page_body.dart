@@ -45,7 +45,6 @@ class _TodoPageBodyState extends ConsumerState<TodoPageBody>
         ? ref.watch(todoListProvider.notifier).getFilteredTodos(category)
         : ref.watch(todoListProvider);
     return Scaffold(
-      // key: widget.scaffoldKey,
       backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsetsExtension.fromPercentage(

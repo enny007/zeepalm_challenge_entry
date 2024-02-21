@@ -30,16 +30,6 @@ class TodoListProvider extends StateNotifier<List<Todo>> {
     state = disposableList;
   }
 
-  // List<Todo> selectByCategory(String category) {
-  //   final newList = <Todo>[
-  //     ...state.where((todo) => todo.category == category).toList()
-  //   ];
-  //   if (category.isEmpty) {
-  //     return state;
-  //   }
-  //   print(newList.toString());
-  //   return newList;
-  // }
    List<Todo> getFilteredTodos(String category) {
     final allTodos = <Todo>[...state];
     return allTodos.where((todo) => todo.category == category).toList();

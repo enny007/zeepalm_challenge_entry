@@ -29,7 +29,9 @@ class TodoPage extends ConsumerWidget {
               horizontal: 30,
             ),
             decoration: BoxDecoration(
-              color: AppColors.primaryColor,
+              color: Theme.of(context).brightness == Brightness.light
+                  ? AppColors.primaryColor
+                  : AppColors.primaryColor,
             ),
             child: Row(
               children: [

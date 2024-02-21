@@ -52,6 +52,11 @@ class MyTextField extends StatelessWidget {
             enabled: isEnabled,
             cursorColor: AppColors.primaryColor,
             validator: validator,
+            style: GoogleFonts.lato(
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+              color: Colors.black,
+            ),
             decoration: InputDecoration(
               hintText: hint,
               hintStyle: GoogleFonts.lato(
