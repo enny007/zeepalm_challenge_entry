@@ -6,6 +6,7 @@ import 'package:zeepalm_challenge_entry/components/text_widget.dart';
 import 'package:zeepalm_challenge_entry/providers/todos_list_provider.dart';
 import 'package:zeepalm_challenge_entry/providers/ui_providers.dart';
 import 'package:zeepalm_challenge_entry/utils/colors.dart';
+import 'package:zeepalm_challenge_entry/utils/responsive.dart';
 
 class SideMenu extends ConsumerWidget {
   const SideMenu({super.key});
@@ -22,51 +23,159 @@ class SideMenu extends ConsumerWidget {
       alignment: Alignment.center,
       child: Column(
         children: [
-          const Gap(20),
-          Lottie.asset(
-            'assets/animations/welcome.json',
-          ),
-          const Gap(50),
-          InkWell(
-            splashFactory: NoSplash.splashFactory,
-            onTap: () {
-              ref.read(todoListProvider.notifier).handleCategoryTap(ref, 'all');
-            },
-            child: TextWidget(
-              text: 'View All Todos',
-              fontWeight: FontWeight.bold,
-              fontsize: 31,
-              color: _getCategoryColor(ref, 'all'),
-            ),
-          ),
-          const Gap(20),
-          ListView.builder(
-            shrinkWrap: true,
-            itemCount: categories.length,
-            itemBuilder: (context, index) {
-              final uniqueCategory = categories.elementAt(index);
-              return InkWell(
-                splashFactory: NoSplash.splashFactory,
-                onTap: () {
-                  ref
-                      .read(todoListProvider.notifier)
-                      .handleCategoryTap(ref, uniqueCategory);
-                },
-                child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                      top: 20,
-                    ),
-                    child: TextWidget(
-                      text: uniqueCategory,
-                      fontWeight: FontWeight.bold,
-                      fontsize: 31,
-                      color: _getCategoryColor(ref, uniqueCategory),
-                    ),
+          Responsive(
+            mobile: Column(
+              children: [
+                const Gap(50),
+                InkWell(
+                  splashFactory: NoSplash.splashFactory,
+                  onTap: () {
+                    ref
+                        .read(todoListProvider.notifier)
+                        .handleCategoryTap(ref, 'all');
+                  },
+                  child: TextWidget(
+                    text: 'View All Todos',
+                    fontWeight: FontWeight.bold,
+                    fontsize: 31,
+                    color: _getCategoryColor(ref, 'all'),
                   ),
                 ),
-              );
-            },
+                const Gap(20),
+                ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: categories.length,
+                  itemBuilder: (context, index) {
+                    final uniqueCategory = categories.elementAt(index);
+                    return InkWell(
+                      splashFactory: NoSplash.splashFactory,
+                      onTap: () {
+                        ref
+                            .read(todoListProvider.notifier)
+                            .handleCategoryTap(ref, uniqueCategory);
+                      },
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                            top: 20,
+                          ),
+                          child: TextWidget(
+                            text: uniqueCategory,
+                            fontWeight: FontWeight.bold,
+                            fontsize: 31,
+                            color: _getCategoryColor(ref, uniqueCategory),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+            tablet: Column(
+              children: [
+                const Gap(20),
+                Lottie.asset(
+                  'assets/animations/welcome.json',
+                ),
+                const Gap(50),
+                InkWell(
+                  splashFactory: NoSplash.splashFactory,
+                  onTap: () {
+                    ref
+                        .read(todoListProvider.notifier)
+                        .handleCategoryTap(ref, 'all');
+                  },
+                  child: TextWidget(
+                    text: 'View All Todos',
+                    fontWeight: FontWeight.bold,
+                    fontsize: 31,
+                    color: _getCategoryColor(ref, 'all'),
+                  ),
+                ),
+                const Gap(20),
+                ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: categories.length,
+                  itemBuilder: (context, index) {
+                    final uniqueCategory = categories.elementAt(index);
+                    return InkWell(
+                      splashFactory: NoSplash.splashFactory,
+                      onTap: () {
+                        ref
+                            .read(todoListProvider.notifier)
+                            .handleCategoryTap(ref, uniqueCategory);
+                      },
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                            top: 20,
+                          ),
+                          child: TextWidget(
+                            text: uniqueCategory,
+                            fontWeight: FontWeight.bold,
+                            fontsize: 31,
+                            color: _getCategoryColor(ref, uniqueCategory),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+            desktop: Column(
+              children: [
+                const Gap(20),
+                Lottie.asset(
+                  'assets/animations/welcome.json',
+                ),
+                const Gap(50),
+                InkWell(
+                  splashFactory: NoSplash.splashFactory,
+                  onTap: () {
+                    ref
+                        .read(todoListProvider.notifier)
+                        .handleCategoryTap(ref, 'all');
+                  },
+                  child: TextWidget(
+                    text: 'View All Todos',
+                    fontWeight: FontWeight.bold,
+                    fontsize: 31,
+                    color: _getCategoryColor(ref, 'all'),
+                  ),
+                ),
+                const Gap(20),
+                ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: categories.length,
+                  itemBuilder: (context, index) {
+                    final uniqueCategory = categories.elementAt(index);
+                    return InkWell(
+                      splashFactory: NoSplash.splashFactory,
+                      onTap: () {
+                        ref
+                            .read(todoListProvider.notifier)
+                            .handleCategoryTap(ref, uniqueCategory);
+                      },
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                            top: 20,
+                          ),
+                          child: TextWidget(
+                            text: uniqueCategory,
+                            fontWeight: FontWeight.bold,
+                            fontsize: 31,
+                            color: _getCategoryColor(ref, uniqueCategory),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ],
       ),

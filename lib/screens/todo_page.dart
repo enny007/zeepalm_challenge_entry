@@ -28,7 +28,9 @@ class TodoPage extends ConsumerWidget {
             padding: const EdgeInsets.symmetric(
               horizontal: 30,
             ),
-            decoration: BoxDecoration(color: AppColors.primaryColor),
+            decoration: BoxDecoration(
+              color: AppColors.primaryColor,
+            ),
             child: Row(
               children: [
                 Responsive.isMobile(context)
